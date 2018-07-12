@@ -1,7 +1,5 @@
 class Song < ActiveRecord::Base
   validates :title, presence: true
-  #validates :released, inclusion: { in: %w(true false)}
-  #validates :release_year, presence: true, if: :released?
   validates :release_year, numericality: {only_integer: true }, if: :released?
   validates :artist_name, presence: true
   validate :not_in_the_future
