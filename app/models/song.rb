@@ -13,7 +13,7 @@ class Song < ActiveRecord::Base
         errors.add(:release_year, "can't be in the future")
       end
     end
-  end 
+  end
 
     def same_artist_same_year
       if !!self.title
