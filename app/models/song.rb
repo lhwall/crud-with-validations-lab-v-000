@@ -9,7 +9,7 @@ class Song < ActiveRecord::Base
 
   def not_in_the_future
     if !!self.release_year
-      if self.release_year < Time.new.year
+      if self.release_year > Time.new.year
         errors.add(:release_year, "can't be in the future")
       end
     end
@@ -25,4 +25,5 @@ class Song < ActiveRecord::Base
         end
       end
     end
+
 end
