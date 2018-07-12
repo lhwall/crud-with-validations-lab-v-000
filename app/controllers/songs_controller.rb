@@ -43,9 +43,10 @@ def song_params
   params.require(:song).permit(:title, :released, :release_year, :artist_name, :genre)
 end
 
-def destroy 
-  Song.find(params[:id]).destroy 
+def destroy
+  Song.find(params[:id]).destroy
   redirect_to songs_path
+end
 
 
 end
