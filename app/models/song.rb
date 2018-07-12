@@ -3,7 +3,7 @@ class Song < ActiveRecord::Base
   validates :release_year, numericality: {only_integer: true }, if: :released?
   validates :artist_name, presence: true
   validate :not_in_the_future
-  #validate :same_artist_same_year
+  validate :same_artist_same_year
 
  def released?
    self.released == true
