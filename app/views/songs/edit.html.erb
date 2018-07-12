@@ -1,6 +1,6 @@
 <%= form_for(@song) do |f| %>
-Title:
-Released?:
-Release Year:
-Artist:
-Genre: 
+Title: <%= f.text_field :title %>
+Released?: <%= f.boolean :released %> 
+Release Year: <%= f.integer :release_year %> 
+Artist: <%= f.text_field :artist %>
+Genre:  <%= f.text_field :genre %>
