@@ -22,11 +22,13 @@ class Song < ActiveRecord::Base
         self.class.all.each do |song|
           if song.title == self.title
             if song.release_year == self.release_year
+              if song.id != self.id 
               errors.add(:title, "was already released by this artist this year")
             end
           end
         end
       end
     end
+  end 
 
 end
