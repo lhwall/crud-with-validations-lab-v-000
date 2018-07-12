@@ -7,6 +7,10 @@ class Song < ActiveRecord::Base
   validate :not_in_the_future
   validate :same_artist_same_year
 
+ def released? 
+   self.released == true 
+ end 
+
   def not_in_the_future
     if !!self.release_year
       if self.release_year > Time.new.year
